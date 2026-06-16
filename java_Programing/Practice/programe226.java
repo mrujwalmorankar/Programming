@@ -1,0 +1,74 @@
+
+
+/*
+ iRow=
+iCall=
+
+
+ a
+ b b
+ c c c
+ d d d d  
+  
+
+
+
+*/
+
+import java.util.Scanner;
+
+class Pattern
+{
+   public void Display(int iRow,int iCol)
+   {
+    int i=0;    int j=0; 
+   char ch='\0';
+         if(iRow!=iCol)//filter for Diagonal Pattern
+        {
+             System.out.println("Invalid Parameter");
+             System.out.println("No of Rows and Columns Should Be Same");
+             return;
+        }
+        
+
+    for ( i = 1 ,ch='a'; i<=iRow; i++,ch++) 
+        {
+              for(j=1;j<=i; j++)
+              {
+                
+                    System.out.print(ch +" \t");   
+               
+              }
+              System.out.println();
+        } 
+
+   }
+
+}    
+
+ class programe226
+{
+
+    public static void main(String A [] )
+    {
+        
+
+             Scanner sobj=new Scanner(System.in);
+
+        int iValue1=0;
+        int iValue2=0;
+
+            System.out.println("Enter no of Rows :");
+            iValue1=sobj.nextInt();
+
+            System.out.println("Enter no of Columns :");
+            iValue2=sobj.nextInt();
+
+         Pattern pobj=new Pattern();
+
+         pobj.Display(iValue2, iValue2);
+
+
+
+    }   
+}
