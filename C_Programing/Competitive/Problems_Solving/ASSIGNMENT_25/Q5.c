@@ -1,0 +1,38 @@
+//WAP accept of rows and number of columns from user and display below pattern...
+
+#include<stdio.h>
+
+void Pattern(int iRow, int iCol)
+{
+    int i = 0, j = 0;
+
+    for(i = 1; i <= iRow; i++)
+    {
+        int No = i;
+
+        for(j = 1; j <= iCol; j++)
+        {
+            printf("%d\t", No);
+            No++;
+        }
+    printf("\n");
+    }
+}
+
+
+int main()
+{
+    int iRow = 0, iCol = 0;
+
+    printf("Enter No of Rows : ");
+    scanf("%d", &iRow);
+
+    printf("Enter No of Columns : ");
+    scanf("%d", &iCol);
+
+    Pattern(iRow, iCol);
+
+    return 0;
+}
+
+
