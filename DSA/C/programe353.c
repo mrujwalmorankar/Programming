@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+#pragma pack(1)
+struct node 
+{
+      int data ;//4(int)
+      struct node *next;//8 
+           
+};
+int main()
+{
+
+    struct node obj;
+  
+    obj.data=11;
+    obj.next=NULL;//direct memory allocation using . operator 
+     
+    printf("%d\n",obj.data);
+    
+    return 0;
+}
