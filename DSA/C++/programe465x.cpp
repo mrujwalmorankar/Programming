@@ -1,0 +1,92 @@
+#include<iostream>
+using namespace std;
+
+
+#pragma pack(1)
+struct node
+{
+    int data;
+    struct node  *next ;
+};
+
+
+class Stack
+{
+  private :
+   struct node * first;
+   int iCount;
+ 
+  public:
+    Stack();
+    void Push(int iNo);//InsertFirst
+     int Pop();        //DeleteFirst
+     int Peep();       // DeletFirst
+    void Display();
+    int Count();
+      
+}; 
+
+Stack  :: Stack ()
+{
+     this->first =NULL;
+     this ->iCount=0;
+
+}
+
+void Stack  :: Push(int iNo)
+{
+  
+
+    struct node *newn = new struct node();
+
+    newn->data = iNo;
+    
+    newn->next = first;
+    first = newn;
+
+    iCount++;
+}
+
+
+int  Stack  ::Pop() 
+{return 0;}       
+int  Stack  ::Peep()
+{return 0;}       
+void Stack  :: Display()
+{
+    struct node *temp =NULL;
+
+    temp =first;
+
+    while(temp !=NULL)
+    {
+        cout<<"| "<<temp->data<<" |\n";
+        temp=temp->next;
+    }
+}
+int  Stack ::Count()
+{return iCount;}
+
+
+
+
+int main()
+{
+ Stack sobj;
+ int iRet=0;
+
+sobj.Push(11);
+sobj.Push(21);
+sobj.Push(51);
+sobj.Push(101);
+   
+
+sobj.Display();
+iRet=sobj.Count();
+
+cout<<"Elemets of the Stack are :"<<iRet<<"\n";
+
+
+
+    return 0;
+}
